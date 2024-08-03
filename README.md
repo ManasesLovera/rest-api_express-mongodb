@@ -10,6 +10,7 @@ cookie-parser
 cors
 express
 mongoose
+lodash
 ```
 ### Dev dependencies
 ```
@@ -21,4 +22,5 @@ nodemon
 @types/cookie-parser
 @types/compression
 @types/body-parser
+@types/lodash
 ```
