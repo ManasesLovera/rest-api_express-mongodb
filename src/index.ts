@@ -25,8 +25,7 @@ app.listen(8080, () => {
 })
 
 // you must change the username and password with your own credentials
-//const MONGO_URL = "mongodb+srv://<username>:<password>@cluster0.e4rojqs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-const MONGO_URL = "mongodb+srv://manaseslovera:manaseslovera@cluster0.e4rojqs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const MONGO_URL = "mongodb+srv://<username>:<password>@cluster0.e4rojqs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
