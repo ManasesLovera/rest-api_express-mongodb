@@ -6,6 +6,8 @@ import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
 
+import router from './router';
+
 const app = express();
 
 app.use(cors({
@@ -16,10 +18,10 @@ app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-const server = http.createServer(app);
+//const server = http.createServer(app);
 
-server.listen(3001, () => {
-    console.log('Server running on http://localhost:3001/')
+app.listen(8080, () => {
+    console.log('Server running on http://localhost:8080/')
 })
 
 // you must change the username and password with your own credentials
@@ -28,4 +30,5 @@ const MONGO_URL = "mongodb+srv://manaseslovera:manaseslovera@cluster0.e4rojqs.mo
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
-mongoose.connection.on('error', (error: Error) => console.log("Server working? -> Error: "+error));
+mongoose.connection.on('error', (error: Error) => console.log("Server working? -> "+error));
+app.use('/', router)
